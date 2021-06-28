@@ -10,7 +10,7 @@ public class AddressBook {
 	        public static void main(String[] args) {
 	        	Contact contact = new Contact();
 
-	        	System.out.println("Press 1 - Add contact\nPress 2 - Edit Contact");
+	        	System.out.println("Press 1 - Add contact\nPress 2 - Edit Contact\nPress 3 - Delete contact");
 	            int choice = scanner.nextInt();
 
 	            switch (choice) {
@@ -19,6 +19,8 @@ public class AddressBook {
 	                    break;
 	                case 2:
 	                    editContact(contact);
+	                case 3:
+	                    deleteContact(contact);
 	                    break;
 	                default:
 	                    System.out.println("Invalid input");
@@ -111,5 +113,17 @@ public class AddressBook {
 	                }
 	            }
 	        }
-	    }
+     //deleting the contact
+    public static void deleteContact(Contact contact) {
+    System.out.print("Enter a first name: ");
+    String firstName = scanner.next();
+    System.out.print("Enter a last name: ");
+    String lastName = scanner.next();
+    for (int i=0; i<contactArrayList.size(); i++) {
+        if (contactArrayList.get(i).getFirstName().equals(firstName) && contactArrayList.get(i).getLastName().equals(lastName)) {
+            contactArrayList.remove(i);
+        }
+    }
+}
+}
 	  
