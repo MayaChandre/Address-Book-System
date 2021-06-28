@@ -10,51 +10,105 @@ public class AddressBook {
 	        public static void main(String[] args) {
 	        	Contact contact = new Contact();
 
-	            // adding contact to the address book
-	            addContact(contact, contactArrayList);
+	        	System.out.println("Press 1 - Add contact\nPress 2 - Edit Contact");
+	            int choice = scanner.nextInt();
+
+	            switch (choice) {
+	                case 1:
+	                    addContact(contact, contactArrayList);
+	                    break;
+	                case 2:
+	                    editContact(contact);
+	                    break;
+	                default:
+	                    System.out.println("Invalid input");
+	            }
+
+
 
 	        }
+
+	        // adding contact to the address book
 	        public static void addContact(Contact contact, ArrayList<Contact> contactArrayList) {
-	        	
 	        	
 	        
 	            System.out.print("Enter first name: ");
 	            String firstName = scanner.next();
-	            contact.setfirstName(firstName);
+	            contact.setFirstName(firstName);
 	           
 	            System.out.print("Enter last name: ");
 	            String lastName = scanner.next();
-	            contact.setlastName(lastName);
+	            contact.setLastName(lastName);
 	            
 	            System.out.print("Enter address: ");
 	            String address = scanner.next();
-	            contact.setaddress(address);
+	            contact.setAddress(address);
 	            
 	            System.out.print("Enter city: ");
 	            String city = scanner.next();
-	            contact.setcity(city);
+	            contact.setCity(city);
 	            
 	            System.out.print("Enter state: ");
 	            String state = scanner.next();
-	            contact.setstate(state);
+	            contact.setState(state);
 	            
 	            System.out.print("Enter zip: ");
 	            long zip = scanner.nextLong();
-	            contact.setzip(zip);
+	            contact.setZipCode(zip);
 	            
 	            System.out.print("Enter phone no: ");
 	            long phNumber = scanner.nextLong();
-	            contact.setphNumber(phNumber);
+	            contact.setPhoneNumber(phNumber);
 	            
 	            System.out.print("Enter email: ");
 	            String email = scanner.next();
-	            contact.setemail(email);
+	            contact.setEmail(email);
 
 	            contactArrayList.add(contact);
 
 	            for (Contact c: contactArrayList) {
 	                System.out.println(c.getFirstName() + " " + c.getLastName() + " " + c.getAddress() + " " + c.getCity() + " " + c.getState() + " "  + c.getZipCode()
 	                        + " " + c.getPhoneNumber() + " " + c.getEmail());
+	            }
+	        }
+	    
+	     // edit the contact
+	        public static void editContact(Contact contact) {
+	            System.out.print("Enter a first name: ");
+	            String firstName = scanner.next();
+	            System.out.print("Enter a last name: ");
+	            String lastName = scanner.next();
+	            for (int i=0; i<contactArrayList.size(); i++) {
+	                if (contactArrayList.get(i).getFirstName().equals(firstName) && contactArrayList.get(i).getLastName().equals(lastName)) {
+	                    System.out.print("Enter address: ");
+	                    String address = scanner.next();
+	                    contact.setAddress(address);
+
+	                    System.out.print("Enter city: ");
+	                    String city = scanner.next();
+	                    contact.setCity(city);
+
+	                    System.out.print("Enter state: ");
+	                    String state = scanner.next();
+	                    contact.setState(state);
+
+	                    System.out.print("Enter zip: ");
+	                    long zip = scanner.nextLong();
+	                    contact.setZipCode(zip);
+
+	                    System.out.print("Enter phone no: ");
+	                    long phNumber = scanner.nextLong();
+	                    contact.setPhoneNumber(phNumber);
+
+	                    System.out.print("Enter email: ");
+	                    String email = scanner.next();
+	                    contact.setEmail(email);
+
+	                    for (Contact c: contactArrayList) {
+	                        System.out.println(c.getFirstName() + " " + c.getLastName() + " " + c.getAddress() + " " + c.getCity() + " " + c.getState() + " "  + c.getZipCode()
+	                                + " " + c.getPhoneNumber() + " " + c.getEmail());
+	                    }
+	                }
 	            }
 	        }
 	    }
