@@ -8,6 +8,8 @@ public class AddressBook {
 	    static ArrayList<Contact> contactArrayList = new ArrayList<Contact>();
 
 	        public static void main(String[] args) {
+	        	boolean flag = true;
+	            while (flag) {
 	        	Contact contact = new Contact();
 
 	        	System.out.println("Press 1 - Add contact\nPress 2 - Edit Contact\nPress 3 - Delete contact");
@@ -23,10 +25,11 @@ public class AddressBook {
 	                    deleteContact(contact);
 	                    break;
 	                default:
+	                	flag = false;
 	                    System.out.println("Invalid input");
 	            }
 
-
+	            }
 
 	        }
 
