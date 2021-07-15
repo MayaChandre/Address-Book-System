@@ -1,87 +1,97 @@
 package com.bridgelabz;
 
 public class Contact {
-	public static void main(String[] args) {
-		
+	// Attributes of person
+	private String firstName, lastName, address, city, state, email, zip, phoneNumber;
+
+	// constructor of contactOfperson
+	public Contact(String firstName, String lastName, String address, String city, String state, String email,
+			String phoneNumber, String zip) {
+		setFirstName(firstName);
+		setLastName(lastName);
+		setAddress(address);
+		setCity(city);
+		setState(state);
+		setEmail(email);
+		setPhoneNumber(phoneNumber);
+		setZip(zip);
+
 	}
-	String firstName, lastName, address, city, state, email;
-    long phoneNumber, zipCode;
-    
-    public Contact() {}
 
-    public Contact(String firstName, String lastName, String address, String city, String state, String email, long phoneNumber, long zipCode) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.zipCode = zipCode;
-    }
+	public Contact() {
+
+	}
+
 	public String getFirstName() {
-        return firstName;
-    }
+		return firstName;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    public String getLastName() {
-        return lastName;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;                                           // using getter and setter
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public String getAddress() {
-        return address;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+	public String getAddress() {
+		return address;
+	}
 
-    public String getCity() {
-        return city;
-    }
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-    public void setCity(String city) {
-    	this.city = city;
-    }
+	public String getCity() {
+		return city;
+	}
 
-    public String getState() {
-        return state;
-    }
+	public void setCity(String city) {
+		this.city = city;
+	}
 
-    public void setState(String state) {
-        this.state = state;
-    }
+	public String getState() {
+		return state;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setState(String state) {
+		this.state = state;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public long getPhoneNumber() {
-        return phoneNumber;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public void setPhoneNumber(long phoneNumber) {
-    	this.phoneNumber = phoneNumber;
-    }
+	public String getZip() {
+		return zip;
+	}
 
-    public long getZipCode() {
-        return zipCode;
-    }
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
 
-    public void setZipCode(long zipCode) {
-        this.zipCode = zipCode;
-    }
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
 
-    }
-			
-		
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	//to string generate
+	//@Override
+	/*public String toString() {
+		return "ContactOfPerson [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city="
+				+ city + ", state=" + state + ", email=" + email + ", zip=" + zip + ", phoneNumber=" + phoneNumber
+				+ "]";
+	}*/
+	
+
+}		
