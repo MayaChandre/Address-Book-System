@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class AddressBookMain {
 
-	    public static Scanner sc = new Scanner(System.in);
+	 public static Scanner sc = new Scanner(System.in);
 	    private static AddressBook addressBook = new AddressBook();
 	    public Map<String,AddressBook> addressBookListMap = new HashMap<>();
 
 	    public void addAddressBook(String bookName){
-	        new AddressBookMain();
+	        AddressBookMain addBookMain = new AddressBookMain();
 	        boolean flag = true;
 
 	        while(flag) {
@@ -35,13 +35,13 @@ public class AddressBookMain {
 	                    System.out.println("Enter the Person First name to edit details: ");
 	                    String personName = sc.next();
 
-	                    boolean listEdited = ((AddressBook) addressBook).editContactDetails(personName);
+	                    boolean listEdited = addressBook.editContactDetails(personName);
 	                    if (listEdited) {
 	                        System.out.println("List Edited Successfully");
 	                    } else {
 	                        System.out.println("List Cannot be Edited");
 	                    }
-	                    ( addressBook).display();
+	                    addressBook.display();
 	                    break;
 
 	                case 3:
@@ -67,7 +67,7 @@ public class AddressBookMain {
 
 
 	    public static void main(String[] args) {
-	        System.out.println("Welcome to the Address Book Management System ");
+	        System.out.println("Welcome to the Address Book Management System using Java Stream");
 	        AddressBookMain addressBookMain = new AddressBookMain();
 	        boolean flag =true;
 	        while(flag)
@@ -94,5 +94,7 @@ public class AddressBookMain {
 	                }
 	            }
 	        }
+
+
 	    }
 	}
