@@ -133,6 +133,7 @@ class AddressBookMain {
             }
         }
         System.out.println("Total number of people in this city "+city+": "+countPersonInCity);
+        
     }
     private void sortContactByName() {
         for (Map.Entry<String,AddressBook>entry:addressBookListMap.entrySet()){
